@@ -1,29 +1,194 @@
-* {
+/* ============================================
+   RESET & BASE (mobile-first defaults)
+   ============================================ */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: system-ui, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.6;
-  padding: 2rem;
-  max-width: 720px;
-  margin: 0 auto;
-  background: #0f172a;
   color: #e2e8f0;
+  background-color: #0f172a;
 }
 
-header {
-  margin-bottom: 2rem;
+/* Shared page width for main content and footer */
+main,
+.site-footer {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
-section {
+/* ============================================
+   HERO SECTION
+   ============================================ */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 1.25rem;
+  text-align: center;
+  background-color: #0f172a;
+  background-image: radial-gradient(
+    ellipse 90% 60% at 50% -10%,
+    rgba(56, 189, 248, 0.12),
+    transparent 70%
+  );
+}
+
+.hero__inner {
+  max-width: 36rem;
+  width: 100%;
+}
+
+.hero__greeting {
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.hero__name {
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #f8fafc;
+  margin-bottom: 0.75rem;
+}
+
+.hero__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 0.5rem;
+}
+
+.hero__subtitle {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-bottom: 1.25rem;
+}
+
+.hero__mission {
+  font-size: 1rem;
+  color: #cbd5e1;
+  margin-bottom: 1.75rem;
+  max-width: 32rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Call-to-action button */
+.hero__cta {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #0f172a;
+  background-color: #38bdf8;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.hero__cta:hover,
+.hero__cta:focus-visible {
+  background-color: #7dd3fc;
+  transform: translateY(-2px);
+}
+
+.hero__cta:focus-visible {
+  outline: 2px solid #f8fafc;
+  outline-offset: 3px;
+}
+
+/* ============================================
+   MAIN SECTIONS (About, Projects)
+   ============================================ */
+
+main {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.section {
   margin-bottom: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #1e293b;
+  border-radius: 10px;
+  border: 1px solid rgba(148, 163, 184, 0.15);
 }
 
-footer {
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  opacity: 0.8;
+.section h2 {
+  font-size: 1.125rem;
+  color: #38bdf8;
+  margin-bottom: 0.75rem;
+}
+
+.section p {
+  color: #cbd5e1;
+}
+
+.section p + p {
+  margin-top: 0.75rem;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.site-footer {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #94a3b8;
+  border-top: 1px solid rgba(148, 163, 184, 0.15);
+}
+
+/* ============================================
+   TABLET & DESKTOP (progressive enhancement)
+   ============================================ */
+
+@media (min-width: 768px) {
+  .hero {
+    padding: 3rem 2rem;
+  }
+
+  .hero__title {
+    font-size: 1.25rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1.05rem;
+  }
+
+  .hero__mission {
+    font-size: 1.0625rem;
+  }
+
+  main {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .section {
+    padding: 1.5rem 1.75rem;
+  }
 }

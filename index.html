@@ -3,28 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Owen | Portfolio</title>
+  <meta name="description" content="Portfolio of Owen Lourd L. Ravina — aspiring system developer focused on web development and automation." />
+  <title>Owen Lourd L. Ravina | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Hi, I'm Owen</h1>
-    <p>Web developer in training</p>
+
+  <!-- ========== HERO SECTION ========== -->
+  <header class="hero" id="top">
+    <div class="hero__inner">
+      <p class="hero__greeting">Hi, I'm</p>
+      <h1 class="hero__name">Owen Lourd L. Ravina</h1>
+      <p class="hero__title">Aspiring System Developer</p>
+      <p class="hero__subtitle">Web development · AI-assisted workflows · Future Automation Specialist</p>
+      <p class="hero__mission">
+        I build clean, reliable web experiences and learn how to automate workflows
+        so I can ship projects faster and smarter.
+      </p>
+      <a href="#projects" class="hero__cta">View Projects</a>
+    </div>
   </header>
 
+  <!-- ========== MAIN CONTENT ========== -->
   <main>
-    <section>
-      <h2>About</h2>
-      <p>This is my first portfolio site, deployed with GitHub Pages.</p>
+    <section id="about" class="section" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>
+        I'm training as a system developer with a focus on the web. This portfolio
+        is hosted on GitHub Pages and will grow as I add real projects and automation work.
+      </p>
     </section>
-    <section>
-      <h2>Projects</h2>
-      <p>Project 1: This website.</p>
+
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <p><strong>Portfolio Site</strong> — This website. Built with HTML, CSS, and JavaScript.</p>
     </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Owen</p>
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Owen Lourd L. Ravina</p>
   </footer>
 
   <script src="script.js"></script>
