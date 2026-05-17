@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About Owen Lourd L. Ravina — aspiring system developer." />
+  <title>About Me | Owen Lourd L. Ravina</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="about">
+
+  <!-- ========== STICKY NAVIGATION ========== -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="navbar__inner container">
+      <a href="index.html#home" class="navbar__brand">Owen</a>
+
+      <button
+        type="button"
+        class="navbar__toggle"
+        id="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <ul class="navbar__menu" id="nav-menu">
+        <li><a href="index.html#home" class="nav-link">Home</a></li>
+        <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+        <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+        <li><a href="about.html" class="nav-link nav-link--active" aria-current="page">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== ABOUT HERO ========== -->
+  <header class="page-hero">
+    <div class="container reveal">
+      <a href="index.html" class="back-link">← Back to Home</a>
+      <h1 class="page-hero__title">About Me</h1>
+      <p class="page-hero__lead">
+        Aspiring system developer learning web technologies, AI-assisted workflows,
+        and the foundations of automation.
+      </p>
+    </div>
+  </header>
+
+  <main class="about-main">
+    <div class="container">
+
+      <!-- ========== BIO ========== -->
+      <section class="about-block reveal" aria-labelledby="bio-heading">
+        <h2 id="bio-heading" class="about-block__title">Who I Am</h2>
+        <p>
+          I'm <strong>Owen Lourd L. Ravina</strong>, a developer in training with a strong interest
+          in building systems that are practical, maintainable, and user-friendly. I focus on
+          front-end fundamentals today while working toward backend skills and automation expertise.
+        </p>
+        <p>
+          I use AI tools thoughtfully to speed up learning and prototyping, but I prioritize
+          understanding the code I ship. My long-term goal is to become an Automation Specialist
+          who can connect web apps, scripts, and workflows into reliable solutions.
+        </p>
+      </section>
+
+      <!-- ========== TIMELINE ========== -->
+      <section class="about-block reveal" aria-labelledby="timeline-heading">
+        <h2 id="timeline-heading" class="about-block__title">Journey</h2>
+        <ol class="timeline">
+          <li class="timeline__item reveal" style="--delay: 0ms">
+            <span class="timeline__date">2025 — Present</span>
+            <h3 class="timeline__title">Portfolio &amp; Web Foundations</h3>
+            <p>
+              Building this GitHub Pages portfolio with HTML, CSS, and JavaScript. Practicing
+              responsive layouts, semantic markup, and vanilla JS interactions.
+            </p>
+          </li>
+          <li class="timeline__item reveal" style="--delay: 100ms">
+            <span class="timeline__date">2025</span>
+            <h3 class="timeline__title">AI-Assisted Development</h3>
+            <p>
+              Learning to pair with AI tools for faster iteration while reviewing and refining
+              generated code to build real understanding.
+            </p>
+          </li>
+          <li class="timeline__item reveal" style="--delay: 200ms">
+            <span class="timeline__date">Next</span>
+            <h3 class="timeline__title">Automation &amp; Backend</h3>
+            <p>
+              Planned focus on scripting, APIs, and workflow automation — connecting the web
+              front end to useful backend and tooling skills.
+            </p>
+          </li>
+        </ol>
+      </section>
+
+      <!-- ========== VALUES ========== -->
+      <section class="about-block reveal" aria-labelledby="values-heading">
+        <h2 id="values-heading" class="about-block__title">What I Value</h2>
+        <ul class="values-grid">
+          <li class="values-card">
+            <h3>Clarity</h3>
+            <p>Clean code and clear communication make projects easier to grow.</p>
+          </li>
+          <li class="values-card">
+            <h3>Consistency</h3>
+            <p>Small, steady progress beats rushed work that doesn't last.</p>
+          </li>
+          <li class="values-card">
+            <h3>Curiosity</h3>
+            <p>I enjoy learning new tools and understanding how systems fit together.</p>
+          </li>
+        </ul>
+      </section>
+
+      <div class="about-cta reveal">
+        <a href="index.html#contact" class="btn btn--primary">Get In Touch</a>
+        <a href="index.html#projects" class="btn btn--ghost">See Projects</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Owen Lourd L. Ravina. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button type="button" class="top-btn" id="top-btn" aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

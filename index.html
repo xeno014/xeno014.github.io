@@ -4,46 +4,200 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfolio of Owen Lourd L. Ravina — aspiring system developer focused on web development and automation." />
-  <title>Owen Lourd L. Ravina | Portfolio</title>
+  <title>Owen Lourd L. Ravina | Home</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="home">
 
-  <!-- ========== HERO SECTION ========== -->
-  <header class="hero" id="top">
-    <div class="hero__inner">
+  <!-- ========== STICKY NAVIGATION ========== -->
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <div class="navbar__inner container">
+      <a href="index.html#home" class="navbar__brand">Owen</a>
+
+      <button
+        type="button"
+        class="navbar__toggle"
+        id="nav-toggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="nav-menu"
+      >
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+        <span class="navbar__toggle-bar"></span>
+      </button>
+
+      <ul class="navbar__menu" id="nav-menu">
+        <li><a href="index.html#home" class="nav-link" data-section="home">Home</a></li>
+        <li><a href="index.html#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="index.html#skills" class="nav-link" data-section="skills">Skills</a></li>
+        <li><a href="index.html#contact" class="nav-link" data-section="contact">Contact</a></li>
+        <li><a href="about.html" class="nav-link" data-section="about">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero" id="home">
+    <div class="hero__inner container reveal">
       <p class="hero__greeting">Hi, I'm</p>
       <h1 class="hero__name">Owen Lourd L. Ravina</h1>
       <p class="hero__title">Aspiring System Developer</p>
-      <p class="hero__subtitle">Web development · AI-assisted workflows · Future Automation Specialist</p>
+      <p class="hero__subtitle">
+        Web development · AI-assisted workflows · Future Automation Specialist
+      </p>
       <p class="hero__mission">
         I build clean, reliable web experiences and learn how to automate workflows
         so I can ship projects faster and smarter.
       </p>
-      <a href="#projects" class="hero__cta">View Projects</a>
+      <div class="hero__actions">
+        <a href="#projects" class="btn btn--primary">View Projects</a>
+        <a href="about.html" class="btn btn--ghost">About Me</a>
+      </div>
     </div>
   </header>
 
-  <!-- ========== MAIN CONTENT ========== -->
   <main>
-    <section id="about" class="section" aria-labelledby="about-heading">
-      <h2 id="about-heading">About</h2>
-      <p>
-        I'm training as a system developer with a focus on the web. This portfolio
-        is hosted on GitHub Pages and will grow as I add real projects and automation work.
-      </p>
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects" class="section" aria-labelledby="projects-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 id="projects-heading" class="section__title">Projects</h2>
+          <p class="section__lead">A few things I've built while learning and growing as a developer.</p>
+        </header>
+
+        <div class="projects-grid">
+          <article class="project-card reveal" style="--delay: 0ms">
+            <span class="project-card__tag">web</span>
+            <h3 class="project-card__title">Portfolio Website</h3>
+            <p class="project-card__desc">
+              This multi-page portfolio hosted on GitHub Pages. Built with semantic HTML,
+              mobile-first CSS, and vanilla JavaScript for navigation and animations.
+            </p>
+            <ul class="project-card__stack">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a href="https://github.com/xeno014/xeno014.github.io" class="project-card__link" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </article>
+
+          <article class="project-card reveal" style="--delay: 100ms">
+            <span class="project-card__tag">learning</span>
+            <h3 class="project-card__title">Automation Toolkit</h3>
+            <p class="project-card__desc">
+              A planned project focused on workflow automation — scripting repetitive tasks
+              and integrating AI-assisted tools into daily development.
+            </p>
+            <ul class="project-card__stack">
+              <li>Python</li>
+              <li>Scripts</li>
+              <li>APIs</li>
+            </ul>
+            <span class="project-card__status">Coming soon</span>
+          </article>
+
+          <article class="project-card reveal" style="--delay: 200ms">
+            <span class="project-card__tag">web</span>
+            <h3 class="project-card__title">Interactive Landing Page</h3>
+            <p class="project-card__desc">
+              Practice build for responsive layouts, scroll animations, and accessible
+              UI patterns — foundations for future client and product work.
+            </p>
+            <ul class="project-card__stack">
+              <li>CSS Grid</li>
+              <li>Flexbox</li>
+              <li>Accessibility</li>
+            </ul>
+            <span class="project-card__status">In progress</span>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="projects" class="section" aria-labelledby="projects-heading">
-      <h2 id="projects-heading">Projects</h2>
-      <p><strong>Portfolio Site</strong> — This website. Built with HTML, CSS, and JavaScript.</p>
+    <!-- ========== SKILLS ========== -->
+    <section id="skills" class="section section--alt" aria-labelledby="skills-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 id="skills-heading" class="section__title">Skills</h2>
+          <p class="section__lead">Technologies and practices I'm actively developing.</p>
+        </header>
+
+        <div class="skills-grid reveal">
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>HTML &amp; CSS</span>
+              <span class="skill-item__level">Growing</span>
+            </div>
+            <div class="skill-bar"><span style="width: 75%"></span></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>JavaScript</span>
+              <span class="skill-item__level">Growing</span>
+            </div>
+            <div class="skill-bar"><span style="width: 65%"></span></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>Git &amp; GitHub</span>
+              <span class="skill-item__level">Comfortable</span>
+            </div>
+            <div class="skill-bar"><span style="width: 70%"></span></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-item__header">
+              <span>AI-Assisted Development</span>
+              <span class="skill-item__level">Learning</span>
+            </div>
+            <div class="skill-bar"><span style="width: 60%"></span></div>
+          </div>
+        </div>
+
+        <ul class="skills-tags reveal">
+          <li>Responsive Design</li>
+          <li>GitHub Pages</li>
+          <li>Problem Solving</li>
+          <li>Workflow Automation</li>
+          <li>REST APIs</li>
+          <li>Documentation</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section id="contact" class="section" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section__header reveal">
+          <h2 id="contact-heading" class="section__title">Get In Touch</h2>
+          <p class="section__lead">Open to collaborations, feedback, and learning opportunities.</p>
+        </header>
+
+        <div class="contact-card reveal">
+          <p>Feel free to reach out — I'd love to connect.</p>
+          <div class="contact-links">
+            <a href="mailto:owen.ravina14@gmail.com" class="contact-links__item">owen.ravina14@gmail.com</a>
+            <a href="https://github.com/xeno014" class="contact-links__item" target="_blank" rel="noopener noreferrer">github.com/xeno014</a>
+          </div>
+          <a href="about.html" class="btn btn--ghost">Read my story →</a>
+        </div>
+      </div>
     </section>
   </main>
 
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Owen Lourd L. Ravina</p>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Owen Lourd L. Ravina. All rights reserved.</p>
+    </div>
   </footer>
+
+  <!-- ========== BACK TO TOP ========== -->
+  <button type="button" class="top-btn" id="top-btn" aria-label="Back to top" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
 
   <script src="script.js"></script>
 </body>
