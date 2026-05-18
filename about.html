@@ -7,7 +7,20 @@
   <title>About Me | Owen Lourd L. Ravina</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body data-page="about">
+<body data-page="about" class="preloader-active">
+
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-busy="true" aria-label="Loading page">
+    <div class="preloader__terminal">
+      <p class="preloader__line">
+        <span class="preloader__prompt">&gt;</span>
+        <span id="preloader-text">Initializing Portfolio...</span>
+        <span class="preloader__cursor" aria-hidden="true">_</span>
+      </p>
+      <div class="preloader__bar" aria-hidden="true">
+        <span class="preloader__progress" id="preloader-progress"></span>
+      </div>
+    </div>
+  </div>
 
   <!-- ========== STICKY NAVIGATION ========== -->
   <nav class="navbar" id="navbar" aria-label="Main navigation">

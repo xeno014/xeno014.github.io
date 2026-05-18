@@ -7,6 +7,110 @@
 (function () {
   "use strict";
 
+  /* ========== Developer preloader ========== */
+  var preloader = document.getElementById("preloader");
+  var preloaderText = document.getElementById("preloader-text");
+  var preloaderProgress = document.getElementById("preloader-progress");
+  var LOADER_MESSAGES = [
+    "Initializing Portfolio...",
+    "Loading Assets...",
+    "Launching Interface...",
+  ];
+  var MIN_LOADER_MS = 1400;
+
+  function initPreloader() {
+    if (!preloader) {
+      document.body.classList.remove("preloader-active");
+      document.body.classList.add("is-loaded");
+      return;
+    }
+
+    var msgIndex = 0;
+    var assetsLoaded = 0;
+    var windowLoaded = false;
+    var finished = false;
+    var startTime = Date.now();
+
+    if (preloaderText) {
+      preloaderText.textContent = LOADER_MESSAGES[0];
+    }
+
+    var messageTimer = window.setInterval(function () {
+      msgIndex = (msgIndex + 1) % LOADER_MESSAGES.length;
+      if (preloaderText) {
+        preloaderText.textContent = LOADER_MESSAGES[msgIndex];
+      }
+    }, 700);
+
+    function setProgress(percent) {
+      if (preloaderProgress) {
+        preloaderProgress.style.width = Math.min(100, percent) + "%";
+      }
+    }
+
+    function preloadImage(src) {
+      return new Promise(function (resolve) {
+        var img = new Image();
+        img.onload = img.onerror = resolve;
+        img.src = src;
+      });
+    }
+
+    var assets = [];
+    var profilePhoto = document.querySelector(".profile-photo");
+    if (profilePhoto && profilePhoto.getAttribute("src")) {
+      assets.push(profilePhoto.getAttribute("src"));
+    }
+
+    var totalAssets = assets.length || 1;
+
+    Promise.all(
+      assets.map(function (src) {
+        return preloadImage(src);
+      })
+    ).then(function () {
+      assetsLoaded = totalAssets;
+      setProgress(assets.length ? 70 : 50);
+    });
+
+    window.addEventListener("load", function () {
+      windowLoaded = true;
+      setProgress(90);
+      tryFinish();
+    });
+
+    function tryFinish() {
+      if (finished) return;
+      if (!windowLoaded) return;
+
+      var elapsed = Date.now() - startTime;
+      if (elapsed < MIN_LOADER_MS) {
+        window.setTimeout(tryFinish, MIN_LOADER_MS - elapsed);
+        return;
+      }
+
+      finished = true;
+      window.clearInterval(messageTimer);
+      setProgress(100);
+      if (preloaderText) {
+        preloaderText.textContent = "Launching Interface...";
+      }
+
+      preloader.classList.add("preloader--done");
+      preloader.setAttribute("aria-busy", "false");
+      document.body.classList.remove("preloader-active");
+      document.body.classList.add("is-loaded");
+
+      window.setTimeout(function () {
+        preloader.setAttribute("aria-hidden", "true");
+      }, 600);
+    }
+
+    window.setTimeout(tryFinish, MIN_LOADER_MS + 2500);
+  }
+
+  initPreloader();
+
   var SCROLL_TOP_THRESHOLD = 300;
   var NAVBAR = document.getElementById("navbar");
   var NAV_TOGGLE = document.getElementById("nav-toggle");
@@ -169,6 +273,9 @@
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             skillsSection.classList.add("skills--animated");
+            skillsSection.querySelectorAll(".skill-bar span[data-width]").forEach(function (bar) {
+              bar.style.width = bar.getAttribute("data-width") + "%";
+            });
             observer.unobserve(skillsSection);
           }
         });
